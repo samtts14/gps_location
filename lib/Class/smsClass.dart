@@ -4,7 +4,8 @@ import 'package:sms/sms.dart';
 
 class Mensajeria extends StatelessWidget {
   SmsSender sender = new SmsSender();
-  String celular = "8293474922";
+  final cel = TextEditingController();
+  String celular = ""; //string para el telefono.
 
   @override
   Widget build(BuildContext context) {
@@ -16,10 +17,23 @@ class Mensajeria extends StatelessWidget {
           child: GridView(
             //####################-----GRIDVIEW-----#####################
             children: [
+              //-----caja de texto para numero arriba del grid
+              Column(
+                children: [
+                  TextField(
+                    controller: cel,
+                    decoration: InputDecoration(
+                        border: OutlineInputBorder(),
+                        labelText: 'Numero de GPS'),
+                    //onSubmitted: (value) {},
+                  ),
+                ],
+              ),
               //------------------BOTONES--------------
               InkWell(
                 onTap: () {
                   //----------------ONTAP ENCENDER---------------------
+                  celular = cel.text;
                   sender.sendSms(new SmsMessage(celular, 'resume123456'));
                 },
                 child: Container(
@@ -47,6 +61,7 @@ class Mensajeria extends StatelessWidget {
               InkWell(
                 onTap: () {
                   //----------------ONTAP APAGAR---------------------
+                  celular = cel.text;
                   sender.sendSms(new SmsMessage(celular, 'stop123456'));
                 },
                 child: Container(
@@ -74,6 +89,7 @@ class Mensajeria extends StatelessWidget {
               InkWell(
                 onTap: () {
                   //----------------ONTAP ARM---------------------
+                  celular = cel.text;
                   sender.sendSms(new SmsMessage(celular, 'arm123456'));
                 },
                 child: Container(
@@ -101,6 +117,7 @@ class Mensajeria extends StatelessWidget {
               InkWell(
                 onTap: () {
                   //----------------ONTAP DISARM---------------------
+                  celular = cel.text;
                   sender.sendSms(new SmsMessage(celular, 'disarm123456'));
                 },
                 child: Container(
@@ -128,6 +145,7 @@ class Mensajeria extends StatelessWidget {
               InkWell(
                 onTap: () {
                   //----------------ONTAP TRACK---------------------
+                  celular = cel.text;
                   sender.sendSms(new SmsMessage(celular, 'stop123456'));
                 },
                 child: Container(
@@ -155,6 +173,7 @@ class Mensajeria extends StatelessWidget {
               InkWell(
                 onTap: () {
                   //----------------ONTAP---------------------
+                  celular = cel.text;
                   sender.sendSms(new SmsMessage(celular, 'stop123456'));
                 },
                 child: Container(
@@ -181,19 +200,13 @@ class Mensajeria extends StatelessWidget {
               ),
             ],
             gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 2, mainAxisSpacing: 10, crossAxisSpacing: 10),
+              crossAxisCount: 2,
+              mainAxisSpacing: 10,
+              crossAxisSpacing: 10,
+            ),
           ),
         ),
       ),
-      /*Envio de mensaje
-      body: Center(
-        child: ElevatedButton(
-          child: Text("Apagar Auto"),
-          onPressed: () {
-            sender.sendSms(new SmsMessage(celular, 'stop123456'));
-          },
-        ),
-      ),*/
     ));
   }
 }
