@@ -1,3 +1,4 @@
+import 'package:appbar_example/Class/smsClass.dart';
 import 'package:appbar_example/main.dart';
 import 'package:flutter/material.dart';
 import 'package:line_awesome_flutter/line_awesome_flutter.dart';
@@ -45,7 +46,7 @@ class _SimpleAppBarPageState extends State<SimpleAppBarPage> {
           ),
           body: TabBarView(
             children: [
-              buildPage('Home Page'),
+              Mensajeria(),
               buildPage('Feed Page'),
               buildPage('Profile Page'),
               buildPage('Settings Page'),

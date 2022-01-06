@@ -10,6 +10,7 @@ dependencies:
   line_awesome_flutter: ^2.0.0
 
   cupertino_icons: ^1.0.0
+  sms: ^0.2.0
 
 dev_dependencies:
   flutter_test:
