@@ -1,4 +1,8 @@
-import 'package:appbar_example/Class/smsClass.dart';
+//import 'package:appbar_example/Class/UserPreferences.dart';
+import 'package:appbar_example/Class/Vehiculo1Class.dart';
+import 'package:appbar_example/Class/Vehiculo2Class.dart';
+import 'package:appbar_example/Class/Vehiculo3Class.dart';
+import 'package:appbar_example/Class/Vehiculo4Class.dart';
 import 'package:appbar_example/main.dart';
 import 'package:flutter/material.dart';
 import 'package:line_awesome_flutter/line_awesome_flutter.dart';
@@ -24,7 +28,7 @@ class _SimpleAppBarPageState extends State<SimpleAppBarPage> {
             flexibleSpace: Container(
               decoration: BoxDecoration(
                 gradient: LinearGradient(
-                  colors: [Colors.indigo[600], Colors.lightBlueAccent],
+                  colors: [Colors.grey[900],Colors.grey[850], Colors.grey[700]],
                   begin: Alignment.bottomRight,
                   end: Alignment.topLeft,
                 ),
@@ -46,10 +50,10 @@ class _SimpleAppBarPageState extends State<SimpleAppBarPage> {
           ),
           body: TabBarView(
             children: [
-              Mensajeria(),
-              buildPage('Feed Page'),
-              buildPage('Profile Page'),
-              buildPage('Settings Page'),
+              Vehiculo1(),
+              Vehiculo2(),
+              Vehiculo3(),
+              Vehiculo4()
             ],
           ),
         ),

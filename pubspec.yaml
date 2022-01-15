@@ -7,14 +7,25 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  line_awesome_flutter: ^2.0.0
+  line_awesome_flutter: ^1.0.1
+  shared_preferences: ^0.5.12+4
 
   cupertino_icons: ^1.0.0
-  sms: ^0.2.0
+  sms: 
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  flutter_launcher_icons:
+
+flutter_icons:
+  android: 'launcher_icon'
+  ios: true
+  image_path: 'assets/icons/logoPrincipal.png'
+  adaptatative_icon_background: 'assets/icons/logoPrincipal.png'
 
 flutter:
   uses-material-design: true
+
+  assets:
+    - assets/

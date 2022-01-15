@@ -1,3 +1,4 @@
+//import 'package:appbar_example/Class/UserPreferences.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'Screen/MenuInicio.dart';
@@ -11,9 +12,8 @@ Future main() async {
 
   runApp(MyApp());
 }
-
 class MyApp extends StatelessWidget {
-  static final String title = 'Car Gps';
+  static final String title = 'Car Security';
 
   @override
   Widget build(BuildContext context) => MaterialApp(
